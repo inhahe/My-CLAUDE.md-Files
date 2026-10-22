@@ -21,11 +21,9 @@ I use more than one Claude account, and each has its own config folder with its 
 ## Before you copy them
 
 - **They are written for Windows,** where Claude Code's Bash tool is Git Bash (MSYS). The section *Text that tools mangle* and most of the curated lessons are about that. On macOS or Linux you can skip them.
-- **Some rules refer to tools of mine that aren't in this repository:**
-  - a curator program that rewrites the *Lessons agents learned* section every morning from lessons that recurred across sessions;
-  - an MCP server whose `RaiseHalt` and `LiftHalt` tools stop every agent on the machine at once.
-
-  Drop those rules, or build your own versions of the tools.
+- **Some rules refer to two tools of mine.** They are in repositories of their own:
+  - **The curator: [agent-knowledge](https://github.com/inhahe/agent-knowledge).** Every night it mines your Claude Code transcripts for lessons with a local LLM: corrections you made, tool traps, mistakes agents made and fixed. Every morning a headless Claude session turns the lessons that keep recurring into rules, within a size budget. It writes them into the *Lessons agents learned* section at the end of each `CLAUDE.md`, and touches nothing else in the file. It runs on Windows and needs an NVIDIA GPU with about 20 GB of free VRAM.
+  - **The `RaiseHalt` and `LiftHalt` tools: [orchestrator2](https://github.com/inhahe/orchestrator2)**, my web front end for Claude Code. They are an MCP server built into it ([`agent_tools.py`](https://github.com/inhahe/orchestrator2/blob/main/agent_tools.py), on top of [`agent_comms.py`](https://github.com/inhahe/orchestrator2/blob/main/agent_comms.py)), not a standalone one. [Talking to the other sessions on this machine](https://github.com/inhahe/orchestrator2#talking-to-the-other-sessions-on-this-machine) explains them. Only orchestrator2's sessions are told when a halt is raised, so without orchestrator2, drop the rule *Stopping other agents*.
 - **The `# graphify` section at the top of `user-CLAUDE.md`** is the one [graphify](https://github.com/Graphify-Labs/graphify)'s installer writes. Delete it if you don't use graphify.
 - **The effort calibration was measured** on the history of one of my projects, with the models of October 2026. Model names (Opus, Fable), review levels (`xhigh`, `max`) and Claude Code versions are also as of October 2026.
 - **Paths in angle brackets** (`<tools>`, `<path>`, `<Project A>`) stand for whatever they are on your machine.
