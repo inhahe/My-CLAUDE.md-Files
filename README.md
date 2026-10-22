@@ -6,12 +6,13 @@ They are not my files exactly as I use them. I modified them to remove or rewrit
 
 Some of the rules come from the [`AGENTS.md` of `ludios/clank-right`](https://github.com/ludios/clank-right/blob/master/AGENTS.md): the sections *Push back*, *Reading and research* and *Code review*, and parts of *Version Control* and *Code Quality*. I adapted them from there.
 
-## My two favorite parts
+## My favorite parts
 
-If you take only two things from these files, take these. They have been the most beneficial and made the most difference for me:
+If you take only a few things from these files, take these. They have been the most beneficial and made the most difference for me:
 
 - **The code reviews** (*Code review* in `claude-global.md`). Every batch of commits is reviewed by a fresh Claude session before it is pushed or reported as done. A review typically finds around 7 to 11 issues that you otherwise might not find out about until much later.
 - **The feature suggestions** (the last rule of *Push back* in `claude-global.md`). The agent tells me about features a program ought to have whenever it notices one, even outside the task at hand.
+- **The simplification suggestions** (the rule before it in *Push back*). The agent tells me about code that could be shorter, a mechanism that could go, or two things that could be one, even outside the task at hand.
 
 ## The files
 
@@ -31,6 +32,6 @@ I use more than one Claude account, and each has its own config folder with its 
 - **Some rules refer to two tools of mine.** They are in repositories of their own:
   - **The curator: [agent-knowledge](https://github.com/inhahe/agent-knowledge).** Every night it mines your Claude Code transcripts for lessons with a local LLM: corrections you made, tool traps, mistakes agents made and fixed. Every morning a headless Claude session turns the lessons that keep recurring into rules, within a size budget. It writes them into the *Lessons agents learned* section at the end of each `CLAUDE.md`, and touches nothing else in the file. It runs on Windows and needs an NVIDIA GPU with about 20 GB of free VRAM.
   - **The `RaiseHalt` and `LiftHalt` tools: [agent-comms](https://github.com/inhahe/agent-comms).** It lets the Claude Code sessions on one machine halt each other, across accounts (and, under orchestrator2, address and message each other too). A halt asks every session in a repository, or on the machine, to stop taking new work. It also makes long jobs that run `python -m agent_comms check-halt` refuse to start. It stays up until somebody lifts it. `python -m agent_comms install` gives an account the two tools, and a hook that tells each session about a halt when its next prompt arrives. My [orchestrator2](https://github.com/inhahe/orchestrator2), a web front end for Claude Code, uses it for every session it runs, and tells them at once, idle or not.
-- **The `# graphify` section at the top of `user-CLAUDE.md`** is the one [graphify](https://github.com/Graphify-Labs/graphify)'s installer writes. Delete it if you don't use graphify.
+- **The `# graphify` section at the top of `user-CLAUDE.md`** is the one [graphify](https://github.com/Graphify-Labs/graphify)'s installer writes. Delete it if you don't use graphify. But graphify seems like a great tool, and its README undersells what it can do.
 - **The effort calibration was measured** on the history of one of my projects, with the models of October 2026. Model names (Opus, Fable), review levels (`xhigh`, `max`) and Claude Code versions are also as of October 2026.
 - **Paths in angle brackets** (`<tools>`, `<path>`, `<Project A>`) stand for whatever they are on your machine.
