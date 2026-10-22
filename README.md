@@ -6,6 +6,13 @@ They are not my files exactly as I use them. I modified them to remove or rewrit
 
 Some of the rules come from the [`AGENTS.md` of `ludios/clank-right`](https://github.com/ludios/clank-right/blob/master/AGENTS.md): the sections *Push back*, *Reading and research* and *Code review*, and parts of *Version Control* and *Code Quality*. I adapted them from there.
 
+## My two favorite parts
+
+If you take only two things from these files, take these. They have been the most beneficial and made the most difference for me:
+
+- **The code reviews** (*Code review* in `claude-global.md`). Every batch of commits is reviewed by a fresh Claude session before it is pushed or reported as done. A review typically finds around 7 to 11 issues that you otherwise might not find out about until much later.
+- **The feature suggestions** (the last rule of *Push back* in `claude-global.md`). The agent tells me about features a program ought to have whenever it notices one, even outside the task at hand.
+
 ## The files
 
 | File | Where it goes | What it holds |
