@@ -1,0 +1,28 @@
+# My claude.md files
+
+These are the instruction files I give [Claude Code](https://claude.com/claude-code), with everything specific to my machine and my projects taken out. I'm offering them for the good ideas in them. Take any rule you like, reword it for your setup, or copy a whole file.
+
+Some of the rules come from the [`AGENTS.md` of `ludios/clank-right`](https://github.com/ludios/clank-right/blob/master/AGENTS.md): the sections *Push back*, *Reading and research* and *Code review*, and parts of *Version Control* and *Code Quality*. I adapted them from there.
+
+## The files
+
+| File | Where it goes | What it holds |
+|---|---|---|
+| [`claude-global.md`](claude-global.md) | `~/claude-global.md` | Most of the rules: calibrating effort estimates, optimizing for the end result, pushing back, keeping a `design.md`, research, subagents, the text that Windows tools mangle, cleaning up build output, version control, code review, code quality, and bug tracking. |
+| [`user-CLAUDE.md`](user-CLAUDE.md) | `~/.claude/CLAUDE.md` | The user-level file Claude Code loads in every session. It imports `claude-global.md` with `@~/claude-global.md`, registers the [graphify](https://github.com/safishamsi/graphify) skill, and ends with lessons that agents learned the hard way. |
+| [`workspace-CLAUDE.md`](workspace-CLAUDE.md) | `CLAUDE.md` in the folder that holds your projects | A template that tells an agent where each project's design document, user-facing document and own instructions are. Fill in the `<placeholders>`. |
+
+## Why there are two files instead of one
+
+I use more than one Claude account, and each has its own config folder with its own `CLAUDE.md`. The rules all accounts share live in one file, `claude-global.md`, which each account's `CLAUDE.md` imports. A rule I write there once reaches every account. Each account's own file keeps only what belongs to that account.
+
+## Before you copy them
+
+- **They are written for Windows,** where Claude Code's Bash tool is Git Bash (MSYS). The section *Text that tools mangle* and most of the curated lessons are about that. On macOS or Linux you can skip them.
+- **Some rules refer to tools of mine that aren't in this repository:**
+  - a curator program that rewrites the *Lessons agents learned* section every morning from lessons that recurred across sessions;
+  - an MCP server whose `RaiseHalt` and `LiftHalt` tools stop every agent on the machine at once.
+
+  Drop those rules, or build your own versions of the tools.
+- **The effort calibration was measured** on the history of one of my projects, with the models of October 2026. Model names (Opus, Fable), review levels (`xhigh`, `max`) and Claude Code versions are also as of October 2026.
+- **Paths in angle brackets** (`<tools>`, `<path>`, `<Project A>`) stand for whatever they are on your machine.
