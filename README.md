@@ -10,7 +10,7 @@ Some of the rules come from the [`AGENTS.md` of `ludios/clank-right`](https://gi
 
 If you take only a few things from these files, take these. They have been the most beneficial and made the most difference for me:
 
-- **The code reviews** (*Code review* in `claude-global.md`). Every batch of commits is reviewed by a fresh Claude session before it is pushed or reported as done. A review typically finds around 7 to 11 issues that you otherwise might not find out about until much later.
+- **The code reviews** (*Code review* in `claude-global.md`). Every batch of commits is reviewed by a fresh Claude session, under Opus, before it is pushed or reported as done. A batch where a missed bug is expensive (concurrency, security boundaries, parsers of untrusted input, anything that deletes the user's data, and the like) gets a second review under Fable. A review typically finds around 7 to 11 issues that you otherwise might not find out about until much later.
 - **The feature suggestions** (the last rule of *Push back* in `claude-global.md`). The agent tells me about features a program ought to have whenever it notices one, even outside the task at hand.
 - **The simplification suggestions** (the rule before it in *Push back*). The agent tells me about code that could be shorter, a mechanism that could go, or two things that could be one, even outside the task at hand.
 
