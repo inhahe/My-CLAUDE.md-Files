@@ -14,7 +14,7 @@ If you take only a few things from these files, take these. They have been the m
 - **The feature suggestions** (the last rule of *Push back* in `claude-global.md`). The agent tells me about features a program ought to have whenever it notices one, even outside the task at hand.
 - **The simplification suggestions** (the rule before it in *Push back*). The agent tells me about code that could be shorter, a mechanism that could go, or two things that could be one, even outside the task at hand.
 
-Also, I really like the rule that Claude must fix any issue it finds on the spot or put it into known-issues.md, so that a discovered issue can't just drop off the context window and get lost forever. 
+Also, I really like the rule that Claude must fix any issue it finds on the spot or put it into known-issues.md, so that a discovered issue can't just drop off the context window and get lost forever. And secondly, I think the rule is very important not to fix something with an expedient hack now and defer the proper fix until probably never, as  have that rule because I'd noticed Claude doing the latter many times. 
 
 ## The files
 
